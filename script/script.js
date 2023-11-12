@@ -27,3 +27,22 @@ $(document).ready(() => {
   });
 });
 // home end
+
+// menu start
+$(window).scroll(function () {
+  $(".card").each(function () {
+    var imagePos = $(this).offset().top;
+    var topOfWindow = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (imagePos < topOfWindow + windowHeight && imagePos >= topOfWindow) {
+      $(this).css({ scale: "95%" });
+    } else {
+      // reset jika elemen berada di luar jendela
+      $(this).css({
+        sclae: "30%",
+      });
+    }
+  });
+});
+
+// menu end
